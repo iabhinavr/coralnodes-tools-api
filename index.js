@@ -9,7 +9,7 @@ const app = new express();
 
 app.use(express.json());
 
-app.post('/', async (req, res) => {
+app.post('/critical/generate/', async (req, res) => {
 
     try {
 
@@ -67,6 +67,6 @@ function validateUrl(payload) {
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, 'localhost', () => {
+app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
