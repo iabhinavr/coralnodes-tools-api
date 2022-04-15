@@ -9,6 +9,10 @@ const app = new express();
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('CoralNodes API is working');
+});
+
 app.post('/critical/generate/', async (req, res) => {
 
     try {
