@@ -21,7 +21,7 @@ router.post('/generate', async (req, res) => {
         let responseText = await response.text();
         let length = responseText.length;
 
-        const {css, html, uncritical} = await critical.generate({
+        let {css, html, uncritical} = await critical.generate({
             inline: true,
             base: process.cwd() + '/dist',
             html: responseText,
@@ -36,7 +36,10 @@ router.post('/generate', async (req, res) => {
 
         let result = {
             url: url,
-            length: length
+            length: length,
+            css: css,
+            html: html,
+            uncritical: uncritical
         }
         
         res.send(result);
