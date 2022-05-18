@@ -23,15 +23,9 @@ router.post('/generate', async (req, res) => {
 
         let {css, html, uncritical} = await critical.generate({
             inline: true,
-            base: process.cwd() + '/output',
             html: responseText,
             width: 1300,
             height: 900,
-            target: {
-                css: 'critical.css',
-                html: 'index-critical.html',
-                uncritical: 'uncritical.css'
-            } 
         });
 
         let result = {
